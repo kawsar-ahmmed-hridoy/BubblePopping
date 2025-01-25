@@ -20,8 +20,6 @@ class Bubble {
     update(canvas) {
         this.x += this.dx;
         this.y += this.dy;
-
-        // Bounce off walls
         if (this.x + this.radius > canvas.width || this.x - this.radius < 0) {
             this.dx = -this.dx;
         }
@@ -68,7 +66,6 @@ class Game {
     }
 
     setupEventListeners() {
-        // Menu buttons
         const startButton = document.getElementById('startButton');
         const difficultyButton = document.getElementById('difficultyButton');
         const themeButton = document.getElementById('themeButton');
@@ -242,7 +239,6 @@ class Game {
     }
 }
 
-// Start the game when the page loads
 window.addEventListener('DOMContentLoaded', () => {
     console.log('DOM loaded');
     new Game();
